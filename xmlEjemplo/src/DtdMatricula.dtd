@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT matriculaCursos (factura,estudiante,(matricula|ajuste),programa+)>
+<!ELEMENT factura (programa+,semestre,idFactura,valor,vencimiento+,estado+)>
+<!ELEMENT programa (nombrePrograma, idPrograma, departamento)>
+<!ELEMENT nombrePrograma (#PCDATA)>
+<!ELEMENT idPrograma (#PCDATA)>
+<!ELEMENT departamento (#PCDATA)>
+<!ELEMENT semestre ANY>
+<!ELEMENT idFactura (#PCDATA)>
+<!ELEMENT valor (#PCDATA)>
+<!ELEMENT vencimiento (#PCDATA)>
+<!ELEMENT estado (#PCDATA)>
+<!ELEMENT estudiante (nombres+, apellidos+, tipoDocumento, documento, estrato?, e-mail?, telefono?,tipoEstudiante)>
+<!ELEMENT nombres (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT tipoDocumento (#PCDATA)>
+<!ELEMENT documento (#PCDATA)>
+<!ELEMENT estrato (#PCDATA)>
+<!ELEMENT e-mail ANY>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT tipoEstudiante (#PCDATA)>
+<!ELEMENT matricula (tanda, hora, fecha , ofertaCursos+, programa+, estudiante)>
+<!ELEMENT tanda (#PCDATA)>
+<!ELEMENT hora ANY>
+<!ELEMENT fecha ANY>
+<!ELEMENT ofertaCursos (curso+)>
+<!ELEMENT curso (numCreditos, nombre, grupo+, idCurso, profesor+)>
+<!ELEMENT numCreditos (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT grupo (#PCDATA)>
+<!ELEMENT idCurso (#PCDATA)>
+<!ELEMENT profesor (#PCDATA)>
+<!ELEMENT ajuste (tanda, hora, fecha , ofertaCursos+, programa+, estudiante)>
+<!ELEMENT tanda (#PCDATA)>
+<!ELEMENT hora ANY>
+<!ELEMENT fecha ANY>
+<!ELEMENT ofertaCursos (curso+)>
+<!ELEMENT curso (numCreditos, nombre, grupo+, idCurso, profesor+)>
+<!ELEMENT numCreditos (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT grupo (#PCDATA)>
+<!ELEMENT idCurso (#PCDATA)>
+<!ELEMENT profesor (#PCDATA)>
+<!ATTLIST curso requisito CDATA #REQUIRED>
+
+
+
+
+

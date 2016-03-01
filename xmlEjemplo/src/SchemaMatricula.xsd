@@ -1,0 +1,248 @@
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+
+ <xsd:element name='matriculaCursos'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='factura'/>
+    <xsd:element ref='estudiante'/>
+    <xsd:choice>
+     <xsd:element ref='matricula'/>
+     <xsd:element ref='ajuste'/>
+    </xsd:choice>
+    <xsd:element ref='programa' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='factura'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='programa' maxOccurs='unbounded'/>
+    <xsd:element ref='semestre'/>
+    <xsd:element ref='idFactura'/>
+    <xsd:element ref='valor'/>
+    <xsd:element ref='vencimiento' maxOccurs='unbounded'/>
+    <xsd:element ref='estado' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='programa'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='nombrePrograma'/>
+    <xsd:element ref='idPrograma'/>
+    <xsd:element ref='departamento'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='nombrePrograma' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='idPrograma' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='departamento' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='semestre'>
+  <xsd:complexType>
+   <xsd:sequence>
+   <xsd:any namespace='http://www.w3.org/namespace/'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='idFactura' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='valor' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='vencimiento' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='estado' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='estudiante'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='nombres' maxOccurs='unbounded'/>
+    <xsd:element ref='apellidos' maxOccurs='unbounded'/>
+    <xsd:element ref='tipoDocumento'/>
+    <xsd:element ref='documento'/>
+    <xsd:element ref='estrato' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='e-mail' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='telefono' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='tipoEstudiante'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='nombres' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='apellidos' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='tipoDocumento' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='documento' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='estrato' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='e-mail'>
+  <xsd:complexType>
+   <xsd:sequence>
+   <xsd:any namespace='http://www.w3.org/namespace/'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='telefono' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='tipoEstudiante' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='matricula'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='tanda'/>
+    <xsd:element ref='hora'/>
+    <xsd:element ref='fecha'/>
+    <xsd:element ref='ofertaCursos' maxOccurs='unbounded'/>
+    <xsd:element ref='programa' maxOccurs='unbounded'/>
+    <xsd:element ref='estudiante'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='tanda' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='hora'>
+  <xsd:complexType>
+   <xsd:sequence>
+   <xsd:any namespace='http://www.w3.org/namespace/'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='fecha'>
+  <xsd:complexType>
+   <xsd:sequence>
+   <xsd:any namespace='http://www.w3.org/namespace/'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='ofertaCursos'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='curso' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='curso'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='numCreditos'/>
+    <xsd:element ref='nombre'/>
+    <xsd:element ref='grupo' maxOccurs='unbounded'/>
+    <xsd:element ref='idCurso'/>
+    <xsd:element ref='profesor' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='requisito' type='xsd:string' use='required'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='numCreditos' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='nombre' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='grupo' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='idCurso' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='profesor' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='ajuste'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='tanda'/>
+    <xsd:element ref='hora'/>
+    <xsd:element ref='fecha'/>
+    <xsd:element ref='ofertaCursos' maxOccurs='unbounded'/>
+    <xsd:element ref='programa' maxOccurs='unbounded'/>
+    <xsd:element ref='estudiante'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='tanda' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='hora'>
+  <xsd:complexType>
+   <xsd:sequence>
+   <xsd:any namespace='http://www.w3.org/namespace/'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='fecha'>
+  <xsd:complexType>
+   <xsd:sequence>
+   <xsd:any namespace='http://www.w3.org/namespace/'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='ofertaCursos'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='curso' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='curso'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='numCreditos'/>
+    <xsd:element ref='nombre'/>
+    <xsd:element ref='grupo' maxOccurs='unbounded'/>
+    <xsd:element ref='idCurso'/>
+    <xsd:element ref='profesor' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='requisito' type='xsd:string' use='required'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='numCreditos' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='nombre' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='grupo' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='idCurso' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='profesor' type='xsd:string'>
+ </xsd:element>
+</xsd:schema>
